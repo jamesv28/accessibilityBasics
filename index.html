@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Accessibility | Forms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/font-awesome.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="aria.html">ARIA information</a></li>
+                <li><a href="otherForm.html">Other Form Elemnts</a> </li>
+                <li><a href="navigation.html">Look at Navigation</a> </li>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<h1 class="text-center">Form Accessibility</h1>
+<section class="row">
+    <div class="container">
+        <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+            <form>
+                <fieldset class="form-group">
+                    <legend>Please enter the following information: user name, email, password</legend>
+                    <label for="name" class="control-label col-md-4 col-sm-4">User name: <i class="fa fa-asterisk" aria-hidden="true"></i> </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" aria-labelledby="user name" required class="form-control" id="name" placeholder="enter your name">
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="email" class="control-label col-md-4 col-sm-4">Email: <i class="fa fa-asterisk" aria-hidden="true"></i></label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="email" aria-labelledby="user email" required id="email" class="form-control" placeholder="email address">
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password" class="control-label col-md-4 col-sm-4">Password: <i class="fa fa-asterisk" aria-hidden="true"></i></label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="password" aria-labelledby="user password" required id="password" class="form-control" placeholder="password">
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</section>
+<section class="row" role="explanation">
+    <h3>WCAG for forms </h3>
+    <p>There has to be some sort of form ocntrol with these inputs to go from one to the other</p>
+    <p>Also a great place for aria-labelledby attribute in the input fields </p>
+</section>
+<script type="text/javascript" src="js/vendor/jquery-3.0.0.js"></script>
+<script type="text/javascript" src="js/vendor/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Accessibility | Use of Aria</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/font-awesome.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="aria.html">ARIA information</a></li>
+                <li><a href="otherForm.html">Other Form Elemnts</a> </li>
+                <li><a href="navigation.html">Look at Navigation</a> </li>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<h1 class="text-center">Web Accessibility - a brief look into the ARIA</h1>
+<section class="row" id="main" role="main">
+    <div class="container">
+        <div class="col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+            <h2>We are going to div into all of the aria elements</h2>
+            <p>Accessible Rich Internet Applications (ARIA) defines ways to make Web content and Web applications (especially those developed with Ajax and JavaScript) more accessible to people with disabilities. For example, ARIA enables accessible navigation landmarks, JavaScript widgets, form hints and error messages, live content updates, and more.</p>
+            <p>ARIA is a set of special accessibility attributes which can be added to any markup, but is especially suited to HTML. The role attribute defines what the general type of object is (such as an article, alert, or slider). Additional ARIA attributes provide other useful properties, such as a description for a form or the current value of a progressbar.
+            </p>
+            <p>Good source of documentation: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN Docs</a> </p>
+            <!--<div class="editor">-->
+                <!--&lt;div&gt; <br>-->
+                <!--&nbsp; &lt;p&gt; <br>-->
+                <!--&nbsp; &nbsp; &lt;span&gt;Hello world&lt;/span&gt; <br>-->
+                <!--&nbsp; &nbsp; &lt;/p&gt; <br>-->
+                <!--&lt;/div&gt;-->
+            <!--</div>-->
+            <article>
+                <p>Let's take a look at simple navigation on the page</p>
+                &lt; ul role="navigation" / &gt;
+            </article>
+            <p>There's a lot more we can do with this</p>
+        </div>
+    </div>
+</section>
+<section class="row" >
+    <div class="container">
+        <div class="col-md-8 col-sm-8 col-sm-offset-2 col-md-offset-2">
+            <h2 class="text-center"></h2>
+            <p>List of terms for ARIA</p>
+            <dl>
+                <dt>aria-hidden</dt>
+                <dd>
+                    Indicates that the element is not visible or perceivable to any user. An element is only considered hidden in the DOM if it or one of its ancestor elements has the aria-hidden attribute set to true.
+                    <ul>
+                        <li>used to hide things that are not relevant to the understanding of the age</li>
+                        <li>Use case: Icons</li>
+                        <li>If you add this to be true to the element - think about adding a title attribute to the element</li>
+                        <li>it is a boolean expression that is defaulted to false </li>
+                    </ul>
+                </dd>
+                <dt>Role</dt>
+                <dd>
+                    Main indicator of type. This semantic association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.
+                    <ul>
+                        <li>header</li>
+                        <li>navigation</li>
+                        <li>banner</li>
+                        <li>application</li>
+                        <li>article</li>
+                        <li>complementary</li>
+                        <li>contentinfo</li>
+                        <li>complementary</li>
+                        <li>region</li>
+                        <li>main</li>
+                        <li>document
+                        <ul>
+                            <li>document vs. application</li>
+                            <li>application should be used literally when a key aspect of the page is using interactivity</li>
+                            <li>common use case for document would be like a news article </li>
+                            <li><i class="fa fa-spin fa-newspaper-o" aria-hidden="true"></i> &nbsp;<a href="https://developer.yahoo.com/blogs/ydn/aria-role-application-53608.html">Great article to reference</a> </li>
+                        </ul>
+                        </li>
+
+                    </ul>
+                </dd>
+                <dt>aria-labelledby</dt>
+                <dd>
+                    The aria-labelledby attribute contains the element IDs of labels in objects such as input elements, widgets, and groups. The attribute establishes relationships between objects and their labels. Assistive technology, such as screen readers, use this attribute to catalog the objects in a document so that users can navigate between them. Without an element ID, the assistive technology cannot catalog the object.
+                    good reference source: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute">MDN resource</a>
+                </dd>
+                <dt>aria-required</dt>
+                <dd>The aria-required attribute is used to indicate that user input is required on an element before a form can be submitted. This attribute can be used with any typical HTML form element; it is not limited to elements that have an ARIA role assigned.
+                    <ul>
+                        <li>Default Value is false</li>
+                        <li><i class="fa fa-newspaper-o" aria-hidden="true"></i> &nbsp; <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute">MDN article</a> </li>
+                        <li><i class="fa fa-newspaper-o" aria-hidden="true">&nbsp; <a href="http://www.oaa-accessibility.org/examplep/tooltip1/">ARIA tooltip example</a> </i> </li>
+                        <li data-toggle="modal" data-target="#tooltipModal">Look at an example</li>
+                    </ul>
+                </dd>
+                <dt>aria-invalid</dt>
+                <dd>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute">MDN article</a>
+                </dd>
+                <dt>aria-describedby</dt>
+                <dd>this is for when one is using something like a modal, tooltip, or even a popover</dd>
+                <dt>aria-label</dt>
+                <dd>
+                    <p>
+                        The aria-label attribute is used to define a string that labels the current element. Use it in cases where a text label is not visible on the screen. If there is visible text labeling the element, use aria-labelledby instead.
+                    </p>
+                </dd>
+                <dt>aria-flowto</dt>
+                <dd></dd>
+            </dl>
+        </div>
+    </div>
+</section>
+<section class="modal fade" id="tooltipModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Accessibility tooltip</h4>
+            </div>
+            <div class="modal-body" role="application">
+                <form>
+                    <fieldset class="form-group">
+                        <label id="first-name" class="control-label col-md-2" for="userName">Name: </label>
+                        <div class="col-md-4">
+                            <input type="text" id="userName" aria-labelledby="first-name" placeholder="Enter your first name" aria-required="true" data-toggle="tooltip" data-placement="right"
+                            title="your first name" required rel="firstNameTooltip">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/vendor/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
